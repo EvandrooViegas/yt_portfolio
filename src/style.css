@@ -1,0 +1,203 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+    /* --background: linear-gradient(90deg, rgb(17, 17, 17), rgb(43, 43, 43)); */
+    /* --background: url("./images//background.png"); */
+    /* background: var(--background); */
+
+    @apply bg-neutral-900;
+    overflow-x: hidden;
+    width: 100vw;
+    color: white;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+::-webkit-scrollbar {
+    width: 15px;
+    transition: 6s;
+}
+
+::-webkit-scrollbar-track {
+    background: rgb(24, 24, 24);
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(64.88deg, rgba(123, 121, 247, 0.664), rgba(81, 122, 255, 0.952)); 
+    border-radius: 100px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    @apply bg-indigo-900
+}
+
+
+.flex-v-center {
+    display: flex;
+    align-items: center;
+}
+
+.flex-h-center {
+    display: flex;
+    justify-content: center;
+}
+
+.flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.center { 
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.center-v {
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+
+/* Backgrounds */
+
+.glass-white {
+
+    background: rgba(230, 230, 230, 0.014);
+    backdrop-filter: blur(14px);
+}
+
+.bg-space {
+    background-image: url("./images/background.png");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+}
+
+
+.bg-text-gradient-1 {
+
+    background: linear-gradient(64.88deg, rgba(123, 121, 247, 0.664), rgba(81, 122, 255, 0.952)); 
+    /* background: linear-gradient(90deg, #46b191 0%, rgba(95, 92, 241, 0.78) 109.17%); */
+    background-size: 100%;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    -webkit-text-fill-color: transparent; 
+    -moz-text-fill-color: transparent;
+}
+
+.bg-text-gradient-2 {
+    background: linear-gradient(270deg, #AA83FF 0%, rgba(123, 176, 255, 0.74) 100%, #815CD1 100%);
+    background-size: 100%;
+    height: fit-content;
+    padding: 19px;
+    line-height: 100%;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    -webkit-text-fill-color: transparent; 
+    -moz-text-fill-color: transparent;
+}
+
+/* .bg-gradient-1 {
+    background: linear-gradient(90deg, rgba(76, 72, 255, 0.78) 0%, #45316D 100%);    background-size: 100%;
+}
+
+.bg-gradient-2 {
+    background: linear-gradient(90deg, #7E79C8 5.93%, rgba(78, 75, 205, 0.78) 100%);
+} */
+
+.bg-gradient-1 {
+    background: linear-gradient(64.88deg, rgba(123, 121, 247, 0.44), rgba(61, 41, 240, 0.171))    
+    /* background: linear-gradient(64.88deg, rgba(99, 98, 169, 0.44) 12.75%, rgba(61, 61, 61, 0) 111.17%)     */
+}
+
+.bg-gradient-4 {
+    background: linear-gradient(64.88deg, 
+    var(--background) 90%, 
+    rgb(98, 0, 255) 10%
+    )    
+}
+
+/* Animations */
+.transition-open {
+    animation: transition-open .3s ease-out;
+}
+
+.slide-left {
+    animation: slide-left 0.7s ease-out;
+    opacity: 1;
+}
+.slide-right {
+    animation: slide-right 0.7s ease-out;
+    opacity: 1;
+}
+
+.spin {
+    rotate: 200deg;
+    animation: 5s linear alternate infinite spin;
+}
+
+.link {
+    position: relative;
+}
+
+.link::before {
+    opacity: 0;
+    content: "";
+    position: absolute;
+    bottom: -2px;
+    transition: linear .2s;
+    width: 0px;
+    height: 2.7px;
+    background: linear-gradient(90deg, #7E79C8 5.93%, rgba(89, 122, 231, 0.78) 100%);
+    border-radius: 100px;
+}
+
+.link:hover::before  {
+    opacity: 1;
+  
+    width: 40%;
+    
+} 
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transition: rotate(0deg);
+    }
+}
+
+@keyframes slide-left {
+    from {
+        transform: translateX(-200px);
+    }
+    to {
+        transform: translateX(0px);
+    }
+}
+
+@keyframes slide-right {
+    from {
+        transform: translateX(200px);
+    }
+    to {
+        transform: translateX(0px);
+    }
+}
+
+@keyframes transition-open {
+    from {
+        width: 0px;
+    }
+
+    to {
+        width: 100%;
+    }
+}
